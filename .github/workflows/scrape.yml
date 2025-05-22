@@ -19,9 +19,12 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps --quiet chromium
+
       - name: Run scraper
         run: npm start
         env:
-          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
+          LINKEDIN_EMAIL:    ${{ secrets.LINKEDIN_EMAIL }}
           LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
-          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_WEBHOOK_URL:   ${{ secrets.N8N_WEBHOOK_URL }}
