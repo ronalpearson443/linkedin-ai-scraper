@@ -20,7 +20,7 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps --quiet chromium
+        run: npx playwright install --with-deps chromium
 
       - name: Run scraper
         run: npm start
